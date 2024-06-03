@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .btn-success {
+            background-color: #04AA6D;
+            color: black;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 120px;
+            resize: vertical;
+            background: aquamarine;
+        }
+
+        .btn-success:hover {
+            background-color: #45a049;
+
+        }
+
+
+        .container {
+            border-radius: 5px;
+            width: 50%;
+            margin: auto;
+            background-color: darkgray;
+            padding: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -130%);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Saqlash</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

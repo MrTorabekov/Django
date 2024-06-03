@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/stylee.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h2>Users List</h2>
+    <button type="submit" class="addBtn"><a href="{%url 'create'%}">+ Add</a></button>
+
+</div>
+<div class="hr"></div>
+{% for i in dataset %}
+<table>
+    <tr>
+        <td>{{ i.fullname }}</td>
+        <td>{{ i.created }}</td>
+        <td><a href="{% url 'delete' pk=i.id %}"><i style="color: red;margin-left:550px;"
+                                                    class='bx bx-trash'></i></a></td>
+
+    </tr>
+</table>
+
+<div class="hr"></div>
+{% endfor %}
+
+</body>
+
+</html>
